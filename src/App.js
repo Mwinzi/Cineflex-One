@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './Utils/Header';
+import MovieSelection from './Movie/MovieSelection';
+import ReceiptPage from './Receipt/ReceiptPage';
+import SeatSelection from './Seat/SeatSelection';
+import SessionSelection from './Session/SessionSelection';
+
+export default function App() {
+
+    const [movieDetails, setMovieDetails] = useState({});
+
+    function updateMovieDetails(currentDetails, sessionId, details) {
+        setMovieDetails(details = { ...currentDetails, sessionId: sessionId });
+    }
+
+    return (
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<MovieSelection />}></Route>
+                <Route path="/sessions/:idMovie" element={<SessionSelection />}></Route>
+                <Route path="/seats/:idSession" element={<SeatSelection confirmSend={updateMovieDetails} />}></Route>
+                <Route path="/receipt" element={<ReceiptPage confirmSend={movieDetails} />}></Route>
+            </Routes>
+        </BrowserRouter>
+    )
 }
-
-export default App;
