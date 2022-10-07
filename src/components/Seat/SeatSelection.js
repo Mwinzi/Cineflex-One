@@ -30,7 +30,7 @@ export default function SeatSelection({ confirmSend }) {
         return (
             <div className="loading">
                 <img src={loading} />
-                <h1>Loading please wait...</h1>
+                <h1>Loading, please wait...</h1>
             </div>
         );
     }
@@ -73,7 +73,7 @@ export default function SeatSelection({ confirmSend }) {
         } else if (nome.length === 0) {
             alert("Enter your full name to proceed");
         } else if (cpf.length !== 10) {
-            alert("Enter your phone number");
+            alert("Enter phone number with 10 numbers");
         }
     }
 
@@ -87,7 +87,7 @@ export default function SeatSelection({ confirmSend }) {
     return (
         <main className="seat-selection-page">
             <div className="title-page">
-                <span className="title">Select the seat(s)</span>
+                <span className="title">Select seat(s)</span>
             </div>
             <div className="seats">
                 <div className="seats-to-choose">
@@ -102,7 +102,7 @@ export default function SeatSelection({ confirmSend }) {
                 <div className="seat-subtitle">
                     <div className="selected">
                         <div className="circle selected"></div>
-                        Team
+                        Selected
                     </div>
                     <div className="available">
                         <div className="circle available"></div>
@@ -119,13 +119,13 @@ export default function SeatSelection({ confirmSend }) {
             <div className="buyer-info">
                 <div className="buyer-name">
                     <span className="name">
-                        Buyers name:
+                        Name of buyer:
                     </span>
                     <input type="text" className="input-name" placeholder='Type your name...' onChange={handleName} value={nome} />
                 </div>
                 <div className="buyer-cpf">
                     <span className="cpf">
-                        Buyers phone number:
+                        Buyer phone number:
                     </span>
                     <input type="text" className="input-cpf" placeholder='Type your phone number...' onChange={handleCPF} value={cpf} />
                 </div>

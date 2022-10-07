@@ -19,7 +19,7 @@ export default function MovieSelection() {
         return (
             <div className="loading">
                 <img src={loading} />
-                <h1>Loading please wait...</h1>
+                <h1>Loading, please wait...</h1>
             </div>
         );
     }
@@ -27,7 +27,7 @@ export default function MovieSelection() {
     return (
         <main className="movie-selection-page">
             <div className="title-page">
-                <span className="title">Select a film</span>
+                <span className="title">Select the movie</span>
             </div>
             <div className="content">
                 {movies.map(movie => (

@@ -20,7 +20,7 @@ export default function ReceiptPage({ confirmSend }) {
         return (
             <div className="loading">
                 <img src={loading} />
-                <h1>Loading please wait...</h1>
+                <h1>Loading, please wait...</h1>
             </div>
         );
     }
@@ -50,7 +50,7 @@ export default function ReceiptPage({ confirmSend }) {
                     <div className="container">
 
                         <div className="title">
-                            Tickets A
+                            Tickets
                         </div>
                         {confirmSend.ids.map(seat => (
                             <div className="data">
@@ -76,7 +76,7 @@ export default function ReceiptPage({ confirmSend }) {
             </div>
             <Link to="/">
                 <div className="home-button">
-                    <button>Back to Home</button>
+                    <button>Go to Home</button>
                 </div>
             </Link>
 

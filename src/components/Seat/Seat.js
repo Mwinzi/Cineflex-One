@@ -13,7 +13,7 @@ export default function Seat({ classSeat, name, id, handle }) {
                 setSelected('circle selected');
             }
         } else {
-            alert('Esse assento não está disponível!')
+            alert('This seat is not available')
         }
     }
 

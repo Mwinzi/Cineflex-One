@@ -23,7 +23,7 @@ export default function SessionSelection() {
         return (
             <div className="loading">
                 <img src={loading} />
-                <h1>Loading please wait...</h1>
+                <h1>Loading, please wait...</h1>
             </div>
         );
     }
@@ -31,7 +31,7 @@ export default function SessionSelection() {
     return (
         <main className="time-selection-page">
             <div className="title-page">
-                <span className="title">Select time to watch</span>
+                <span className="title">Select the time</span>
             </div>
             <div className="content">
                 <div className="container">
